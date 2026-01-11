@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dude Spin – Experience the ultimate casino adventure with innovative gameplay and exciting rewards">
-    <meta name="theme-color" content="#2563eb">
+    <meta name="theme-color" content="#ff6b35">
     <title>Dude Spin – Premium Casino Experience</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="apple-touch-icon" href="assets/images/logo.png">
     <link rel="preload" href="assets/css/style.css" as="style">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -14,16 +17,34 @@
     <header class="header" id="header">
         <div class="container">
             <div class="header__inner">
+                <button class="header__sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
+                    <span>☰</span>
+                </button>
                 <a href="#hero" class="header__logo">
-                    <span class="logo-text">Dude Spin</span>
+                    <img src="assets/images/logo.png" alt="Dude Spin" class="logo-image">
                 </a>
                 <nav class="header__nav" id="nav">
                     <a href="#key-facts" class="nav-link">Features</a>
+                    <a href="#top-games" class="nav-link">Games</a>
                     <a href="#table" class="nav-link">Specs</a>
                     <a href="#steps" class="nav-link">How to Play</a>
                     <a href="#advantages" class="nav-link">Benefits</a>
                     <a href="#faq" class="nav-link">FAQ</a>
                 </nav>
+                <div class="header__actions">
+                    <button class="header__search" id="header-search" aria-label="Search">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                    <button class="header__profile" id="header-profile" aria-label="Account">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </button>
+                </div>
                 <button class="header__cta" onclick="window.location.href='#go'">Play Now</button>
                 <button class="header__burger" id="burger" aria-label="Toggle menu">
                     <span></span>
@@ -36,6 +57,10 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
+        <div class="hero__image-wrapper">
+            <img src="assets/images/hero.webp" alt="Dude Spin Game Preview" class="hero__image" loading="eager">
+            <div class="hero__overlay"></div>
+        </div>
         <div class="container">
             <div class="hero__inner">
                 <div class="hero__content">
@@ -44,11 +69,6 @@
                     <div class="hero__cta">
                         <a href="#go" class="btn btn--primary btn--large">Play for Real Money</a>
                         <a href="#go" class="btn btn--secondary btn--large">Try Demo</a>
-                    </div>
-                </div>
-                <div class="hero__visual">
-                    <div class="hero__image-placeholder">
-                        <div class="visual-content">Game Preview</div>
                     </div>
                 </div>
             </div>
@@ -61,42 +81,58 @@
             <h2 class="section-title">Key Features & Specifications</h2>
             <div class="key-facts__grid">
                 <div class="key-fact-card">
-                    <div class="key-fact-card__icon">🎰</div>
+                    <div class="key-fact-card__icon">
+                        <img src="assets/images/key-fact-1.jpeg" alt="High RTP" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='🎰';">
+                    </div>
                     <div class="key-fact-card__title">High RTP</div>
                     <div class="key-fact-card__value">98%</div>
                 </div>
                 <div class="key-fact-card">
-                    <div class="key-fact-card__icon">💰</div>
+                    <div class="key-fact-card__icon">
+                        <img src="assets/images/key-fact-2.webp" alt="Max Win" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='💰';">
+                    </div>
                     <div class="key-fact-card__title">Max Win</div>
                     <div class="key-fact-card__value">x5,000,000</div>
                 </div>
                 <div class="key-fact-card">
-                    <div class="key-fact-card__icon">🎯</div>
+                    <div class="key-fact-card__icon">
+                        <img src="assets/images/key-fact-3.webp" alt="Min/Max Bet" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='🎯';">
+                    </div>
                     <div class="key-fact-card__title">Min/Max Bet</div>
                     <div class="key-fact-card__value">£0.10 – £500</div>
                 </div>
                 <div class="key-fact-card">
-                    <div class="key-fact-card__icon">⚡</div>
+                    <div class="key-fact-card__icon">
+                        <img src="assets/images/key-fact-4.webp" alt="Fast Payouts" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='⚡';">
+                    </div>
                     <div class="key-fact-card__title">Fast Payouts</div>
                     <div class="key-fact-card__value">24/7</div>
                 </div>
                 <div class="key-fact-card">
-                    <div class="key-fact-card__icon">🔒</div>
+                    <div class="key-fact-card__icon">
+                        <img src="assets/images/key-fact-5.webp" alt="Licensed" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='🔒';">
+                    </div>
                     <div class="key-fact-card__title">Licensed</div>
                     <div class="key-fact-card__value">Curaçao</div>
                 </div>
                 <div class="key-fact-card">
-                    <div class="key-fact-card__icon">🎮</div>
+                    <div class="key-fact-card__icon">
+                        <img src="assets/images/key-fact-6.webp" alt="Game Modes" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='🎮';">
+                    </div>
                     <div class="key-fact-card__title">Game Modes</div>
                     <div class="key-fact-card__value">4 Levels</div>
                 </div>
                 <div class="key-fact-card">
-                    <div class="key-fact-card__icon">📱</div>
+                    <div class="key-fact-card__icon">
+                        <img src="assets/images/key-fact-7.webp" alt="Mobile Ready" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='📱';">
+                    </div>
                     <div class="key-fact-card__title">Mobile Ready</div>
                     <div class="key-fact-card__value">100%</div>
                 </div>
                 <div class="key-fact-card">
-                    <div class="key-fact-card__icon">✅</div>
+                    <div class="key-fact-card__icon">
+                        <img src="assets/images/key-fact-8.webp" alt="Provably Fair" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='✅';">
+                    </div>
                     <div class="key-fact-card__title">Provably Fair</div>
                     <div class="key-fact-card__value">Verified</div>
                 </div>
@@ -165,31 +201,49 @@
             <div class="steps__grid">
                 <div class="step-card">
                     <div class="step-card__number">1</div>
+                    <div class="step-card__image">
+                        <img src="assets/images/game_1.webp" alt="Choose Your Bet" loading="lazy">
+                    </div>
                     <h3 class="step-card__title">Choose Your Bet</h3>
                     <p class="step-card__text">Use the slider or enter a specific amount within the allowed range (£0.10 to £500).</p>
                 </div>
                 <div class="step-card">
                     <div class="step-card__number">2</div>
+                    <div class="step-card__image">
+                        <img src="assets/images/game_2.webp" alt="Select Difficulty Level" loading="lazy">
+                    </div>
                     <h3 class="step-card__title">Select Difficulty Level</h3>
                     <p class="step-card__text">Four modes define the risk and reward: Easy, Medium, Difficult, Hardcore.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-card__number">3</div>
+                    <div class="step-card__image">
+                        <img src="assets/images/step-play.webp" alt="Press Play" loading="lazy">
+                    </div>
                     <h3 class="step-card__title">Press "Play"</h3>
                     <p class="step-card__text">The journey begins! Watch as the multiplier increases with each step.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-card__number">4</div>
+                    <div class="step-card__image">
+                        <img src="assets/images/step-cash-out.webp" alt="Cash Out" loading="lazy">
+                    </div>
                     <h3 class="step-card__title">Cash Out Strategically</h3>
                     <p class="step-card__text">After each step, decide: Continue to increase your multiplier, or Cash Out and bank your current winnings.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-card__number">5</div>
+                    <div class="step-card__image">
+                        <img src="assets/images/step-track-progress.webp" alt="Track Progress" loading="lazy">
+                    </div>
                     <h3 class="step-card__title">Track Your Progress</h3>
                     <p class="step-card__text">Monitor your bets in real-time through the "Bet History" tab and verify every outcome.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-card__number">6</div>
+                    <div class="step-card__image">
+                        <img src="assets/images/step-enjoy-rewards.webp" alt="Enjoy Rewards" loading="lazy">
+                    </div>
                     <h3 class="step-card__title">Enjoy the Rewards</h3>
                     <p class="step-card__text">Fast payouts, secure transactions, and a transparent gaming experience await you.</p>
                 </div>
@@ -200,70 +254,89 @@
         </div>
     </section>
 
+    <!-- Top Games -->
+    <section class="top-games" id="top-games">
+        <div class="container">
+            <h2 class="section-title">Top Games</h2>
+            <div class="games-scroll">
+                <div class="game-card">
+                    <img src="assets/images/game-gates-of-olympus.webp" alt="Gates of Olympus" loading="lazy">
+                    <div class="game-card__title">Gates of Olympus</div>
+                </div>
+                <div class="game-card">
+                    <img src="assets/images/game-new-years-eve-fortune.webp" alt="New Year's Eve Fortune" loading="lazy">
+                    <div class="game-card__title">New Year's Eve Fortune</div>
+                </div>
+                <div class="game-card">
+                    <img src="assets/images/game-crack-smash-piggy-bank.webp" alt="Crack & Smash Piggy Bank" loading="lazy">
+                    <div class="game-card__title">Crack & Smash Piggy Bank</div>
+                </div>
+                <div class="game-card">
+                    <img src="assets/images/game-wild-hot-40.webp" alt="Wild Hot 40" loading="lazy">
+                    <div class="game-card__title">Wild Hot 40</div>
+                </div>
+                <div class="game-card">
+                    <img src="assets/images/game-madame-veyra.webp" alt="Madame Veyra" loading="lazy">
+                    <div class="game-card__title">Madame Veyra</div>
+                </div>
+                <div class="game-card">
+                    <img src="assets/images/game-cash-connection-golden.webp" alt="Cash Connection Golden" loading="lazy">
+                    <div class="game-card__title">Cash Connection Golden</div>
+                </div>
+                <div class="game-card">
+                    <img src="assets/images/game-bumba-meu-boi.webp" alt="Bumba Meu Boi" loading="lazy">
+                    <div class="game-card__title">Bumba Meu Boi</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Advantages -->
     <section class="advantages" id="advantages">
         <div class="container">
             <h2 class="section-title">What Makes Dude Spin Special?</h2>
             <div class="advantages__grid">
                 <div class="advantage-item">
-                    <div class="advantage-item__icon">✅</div>
+                    <div class="advantage-item__icon">
+                        <img src="assets/images/advantage-licensed.png" alt="Licensed" loading="lazy">
+                    </div>
                     <h3 class="advantage-item__title">Fully Licensed & Regulated</h3>
                     <p class="advantage-item__text">Play with confidence on a platform that's fully licensed and regulated.</p>
                 </div>
                 <div class="advantage-item">
-                    <div class="advantage-item__icon">🎯</div>
+                    <div class="advantage-item__icon">
+                        <img src="assets/images/advantage-rtp.png" alt="RTP" loading="lazy">
+                    </div>
                     <h3 class="advantage-item__title">High RTP Rate</h3>
                     <p class="advantage-item__text">98% RTP ensures competitive returns and fair gaming opportunities.</p>
                 </div>
                 <div class="advantage-item">
-                    <div class="advantage-item__icon">💰</div>
+                    <div class="advantage-item__icon">
+                        <img src="assets/images/advantage-win-potential.png" alt="Win Potential" loading="lazy">
+                    </div>
                     <h3 class="advantage-item__title">Massive Win Potential</h3>
                     <p class="advantage-item__text">Win up to x5,000,000 your bet with progressive multipliers.</p>
                 </div>
                 <div class="advantage-item">
-                    <div class="advantage-item__icon">⚡</div>
+                    <div class="advantage-item__icon">
+                        <img src="assets/images/advantage-payouts.png" alt="Fast Payouts" loading="lazy">
+                    </div>
                     <h3 class="advantage-item__title">Fast & Secure Payouts</h3>
                     <p class="advantage-item__text">24/7 payout processing with secure and reliable payment methods.</p>
                 </div>
                 <div class="advantage-item">
-                    <div class="advantage-item__icon">📱</div>
+                    <div class="advantage-item__icon">
+                        <img src="assets/images/advantage-mobile.png" alt="Mobile" loading="lazy">
+                    </div>
                     <h3 class="advantage-item__title">Mobile Optimized</h3>
                     <p class="advantage-item__text">Perfect gaming experience on any device, anywhere, anytime.</p>
                 </div>
                 <div class="advantage-item">
-                    <div class="advantage-item__icon">🔒</div>
+                    <div class="advantage-item__icon">
+                        <img src="assets/images/advantage-fair.png" alt="Fair" loading="lazy">
+                    </div>
                     <h3 class="advantage-item__title">Provably Fair Technology</h3>
                     <p class="advantage-item__text">Verify every bet outcome through transparent, provably fair algorithms.</p>
-                </div>
-                <div class="advantage-item">
-                    <div class="advantage-item__icon">🎮</div>
-                    <h3 class="advantage-item__title">Multiple Difficulty Levels</h3>
-                    <p class="advantage-item__text">Choose your risk level from Easy to Hardcore, tailored to your strategy.</p>
-                </div>
-                <div class="advantage-item">
-                    <div class="advantage-item__icon">🎁</div>
-                    <h3 class="advantage-item__title">Competitive Bonuses</h3>
-                    <p class="advantage-item__text">Attractive welcome bonuses and ongoing promotions for all players.</p>
-                </div>
-                <div class="advantage-item">
-                    <div class="advantage-item__icon">💬</div>
-                    <h3 class="advantage-item__title">24/7 Customer Support</h3>
-                    <p class="advantage-item__text">Round-the-clock support to assist you whenever you need help.</p>
-                </div>
-                <div class="advantage-item">
-                    <div class="advantage-item__icon">🔍</div>
-                    <h3 class="advantage-item__title">Transparent Bet History</h3>
-                    <p class="advantage-item__text">Track and verify every bet with complete transparency and accountability.</p>
-                </div>
-                <div class="advantage-item">
-                    <div class="advantage-item__icon">🎨</div>
-                    <h3 class="advantage-item__title">Customizable Settings</h3>
-                    <p class="advantage-item__text">Personalize your gaming experience with autoplay and sound options.</p>
-                </div>
-                <div class="advantage-item">
-                    <div class="advantage-item__icon">🌟</div>
-                    <h3 class="advantage-item__title">Premier Gaming Experience</h3>
-                    <p class="advantage-item__text">State-of-the-art graphics, smooth gameplay, and immersive design.</p>
                 </div>
             </div>
         </div>
@@ -437,6 +510,50 @@
             </div>
         </div>
     </footer>
+
+    <!-- Left Sidebar -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <button class="sidebar__close" id="sidebar-close" aria-label="Close sidebar">×</button>
+        <nav class="sidebar__nav">
+            <a href="#key-facts" class="sidebar__link">
+                <span class="sidebar__icon">
+                    <img src="assets/images/promotions.png" alt="Features" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='🎯';">
+                </span>
+                <span class="sidebar__text">Features</span>
+            </a>
+            <a href="#top-games" class="sidebar__link">
+                <span class="sidebar__icon">
+                    <img src="assets/images/jackpots.png" alt="Games" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='🎮';">
+                </span>
+                <span class="sidebar__text">Games</span>
+            </a>
+            <a href="#table" class="sidebar__link">
+                <span class="sidebar__icon">
+                    <img src="assets/images/live-casino.png" alt="Specs" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='📊';">
+                </span>
+                <span class="sidebar__text">Specs</span>
+            </a>
+            <a href="#steps" class="sidebar__link">
+                <span class="sidebar__icon">
+                    <img src="assets/images/live-betting.png" alt="How to Play" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='📋';">
+                </span>
+                <span class="sidebar__text">How to Play</span>
+            </a>
+            <a href="#advantages" class="sidebar__link">
+                <span class="sidebar__icon">
+                    <img src="assets/images/spin-rally.png" alt="Benefits" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='⭐';">
+                </span>
+                <span class="sidebar__text">Benefits</span>
+            </a>
+            <a href="#faq" class="sidebar__link">
+                <span class="sidebar__icon">
+                    <img src="assets/images/tournaments.png" alt="FAQ" loading="lazy" onerror="this.style.display='none'; this.parentElement.innerHTML='❓';">
+                </span>
+                <span class="sidebar__text">FAQ</span>
+            </a>
+        </nav>
+    </aside>
 
     <script defer src="assets/js/script.js"></script>
 </body>

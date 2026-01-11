@@ -28,6 +28,66 @@
     }
 })();
 
+// Sidebar toggle
+(function() {
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarClose = document.getElementById('sidebar-close');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+    
+    function toggleSidebar() {
+        if (sidebar && sidebarOverlay) {
+            const isActive = sidebar.classList.contains('active');
+            if (isActive) {
+                sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            } else {
+                sidebar.classList.add('active');
+                sidebarOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+    }
+    
+    function closeSidebar() {
+        if (sidebar && sidebarOverlay) {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+    
+    if (sidebarToggle && sidebar) {
+        sidebarToggle.addEventListener('click', toggleSidebar);
+    }
+    
+    if (sidebarClose && sidebar) {
+        sidebarClose.addEventListener('click', closeSidebar);
+    }
+    
+    if (sidebarOverlay && sidebar) {
+        sidebarOverlay.addEventListener('click', closeSidebar);
+    }
+    
+    // Close sidebar when clicking on links
+    if (sidebar) {
+        const sidebarLinks = sidebar.querySelectorAll('.sidebar__link');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                setTimeout(closeSidebar, 300); // Delay to allow smooth scroll
+            });
+        });
+    }
+    
+    // Close sidebar on Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && sidebar && sidebar.classList.contains('active')) {
+            closeSidebar();
+        }
+    });
+})();
+
 // FAQ Accordion
 (function() {
     const faqItems = document.querySelectorAll('.faq-item');
@@ -62,7 +122,7 @@
             const href = this.getAttribute('href');
             
             // Skip if href is just "#"
-            if (href === '#' || href === '#go') {
+            if (href === '#') {
                 return;
             }
             
@@ -80,6 +140,34 @@
             }
         });
     });
+})();
+
+// Sidebar active link on scroll
+(function() {
+    const sidebarLinks = document.querySelectorAll('.sidebar__link');
+    const sections = document.querySelectorAll('section[id]');
+    
+    function updateActiveLink() {
+        const scrollPos = window.scrollY + 150;
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                sidebarLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', updateActiveLink);
+    updateActiveLink();
 })();
 
 // Header scroll effect
