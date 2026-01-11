@@ -190,6 +190,136 @@
     }
 })();
 
+// Search Modal
+(function() {
+    const searchButton = document.getElementById('header-search');
+    const searchModal = document.getElementById('search-modal');
+    const searchModalOverlay = document.getElementById('search-modal-overlay');
+    const searchModalClose = document.getElementById('search-modal-close');
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+
+    function openSearchModal() {
+        if (searchModalOverlay) {
+            searchModalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            // Focus on search input after animation
+            setTimeout(() => {
+                if (searchInput) {
+                    searchInput.focus();
+                }
+            }, 300);
+        }
+    }
+
+    function closeSearchModal() {
+        if (searchModalOverlay) {
+            searchModalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            if (searchInput) {
+                searchInput.value = '';
+                if (searchResults) {
+                    searchResults.innerHTML = '<p class="search-placeholder">Enter your search query...</p>';
+                }
+            }
+        }
+    }
+
+    // Open modal on search button click
+    if (searchButton) {
+        searchButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            openSearchModal();
+        });
+    }
+
+    // Close modal
+    if (searchModalClose) {
+        searchModalClose.addEventListener('click', closeSearchModal);
+    }
+
+    if (searchModalOverlay) {
+        searchModalOverlay.addEventListener('click', function(e) {
+            if (e.target === searchModalOverlay) {
+                closeSearchModal();
+            }
+        });
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && searchModalOverlay && searchModalOverlay.classList.contains('active')) {
+            closeSearchModal();
+        }
+    });
+
+    // Search functionality (demo)
+    if (searchInput && searchResults) {
+        const searchItems = [
+            { title: 'How to Play Dude Spin', text: 'Learn how to play and start your adventure', href: '#steps' },
+            { title: 'Key Features', text: 'Discover all the features and specifications', href: '#key-facts' },
+            { title: 'Top Games', text: 'Browse our collection of exciting games', href: '#top-games' },
+            { title: 'Game Specifications', text: 'View detailed game mechanics and settings', href: '#table' },
+            { title: 'Benefits', text: 'Learn about the advantages of playing Dude Spin', href: '#advantages' },
+            { title: 'FAQ', text: 'Find answers to frequently asked questions', href: '#faq' },
+            { title: 'Demo Mode', text: 'Try the game for free in demo mode', href: '#steps' },
+            { title: 'Registration', text: 'Create your account and start playing', href: '#go' },
+        ];
+
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase().trim();
+            
+            if (query.length === 0) {
+                searchResults.innerHTML = '<p class="search-placeholder">Enter your search query...</p>';
+                return;
+            }
+
+            const filtered = searchItems.filter(item => 
+                item.title.toLowerCase().includes(query) || 
+                item.text.toLowerCase().includes(query)
+            );
+
+            if (filtered.length === 0) {
+                searchResults.innerHTML = '<p class="search-placeholder">No results found. Try a different search.</p>';
+                return;
+            }
+
+            const resultsHTML = '<ul class="search-results__list">' +
+                filtered.map(item => `
+                    <li class="search-results__item" data-href="${item.href}">
+                        <div class="search-results__title">${item.title}</div>
+                        <div class="search-results__text">${item.text}</div>
+                    </li>
+                `).join('') +
+                '</ul>';
+
+            searchResults.innerHTML = resultsHTML;
+
+            // Add click handlers to results
+            const resultItems = searchResults.querySelectorAll('.search-results__item');
+            resultItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const href = this.getAttribute('data-href');
+                    if (href) {
+                        closeSearchModal();
+                        setTimeout(() => {
+                            const target = document.querySelector(href);
+                            if (target) {
+                                const headerHeight = document.querySelector('.header').offsetHeight;
+                                const targetPosition = target.offsetTop - headerHeight;
+                                window.scrollTo({
+                                    top: targetPosition,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }, 300);
+                    }
+                });
+            });
+        });
+    }
+})();
+
 // Registration Modal
 (function() {
     const profileButton = document.getElementById('header-profile');
