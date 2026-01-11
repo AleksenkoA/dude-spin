@@ -345,28 +345,40 @@
     <!-- Content Sections -->
     <section class="content-sections">
         <div class="container">
-            <article class="content-block">
-                <h2 class="content-block__title">Experience Next-Level Gaming</h2>
-                <p class="content-block__text">Dude Spin represents the cutting edge of online casino entertainment. Forget everything you know about traditional slots—this is an interactive, skill-influenced experience that puts you in complete control. Every decision matters, every bet is transparent, and every win is verified.</p>
-                <p class="content-block__text">Whether you're a cautious player testing the waters or a high-roller seeking maximum thrills, Dude Spin offers a gameplay experience tailored to your style. The combination of strategic decision-making and thrilling multiplier mechanics creates an unparalleled gaming adventure.</p>
+            <article class="content-block content-block--bg-1">
+                <div class="content-block__overlay"></div>
+                <div class="content-block__inner">
+                    <h2 class="content-block__title">Experience Next-Level Gaming</h2>
+                    <p class="content-block__text">Dude Spin represents the cutting edge of online casino entertainment. Forget everything you know about traditional slots—this is an interactive, skill-influenced experience that puts you in complete control. Every decision matters, every bet is transparent, and every win is verified.</p>
+                    <p class="content-block__text">Whether you're a cautious player testing the waters or a high-roller seeking maximum thrills, Dude Spin offers a gameplay experience tailored to your style. The combination of strategic decision-making and thrilling multiplier mechanics creates an unparalleled gaming adventure.</p>
+                </div>
             </article>
 
-            <article class="content-block">
-                <h2 class="content-block__title">Provably Fair Technology</h2>
-                <p class="content-block__text">Transparency is at the core of Dude Spin. Our Provably Fair technology allows every player to verify the outcome of each round independently. No hidden algorithms, no mystery boxes—just clean, verifiable randomness that you can check yourself.</p>
-                <p class="content-block__text">To verify any bet: simply visit your "Bet History", select the bet you want to verify, and click the verification icon. You'll get a complete breakdown of how the outcome was generated, ensuring complete transparency and fair play.</p>
+            <article class="content-block content-block--bg-2">
+                <div class="content-block__overlay"></div>
+                <div class="content-block__inner">
+                    <h2 class="content-block__title">Provably Fair Technology</h2>
+                    <p class="content-block__text">Transparency is at the core of Dude Spin. Our Provably Fair technology allows every player to verify the outcome of each round independently. No hidden algorithms, no mystery boxes—just clean, verifiable randomness that you can check yourself.</p>
+                    <p class="content-block__text">To verify any bet: simply visit your "Bet History", select the bet you want to verify, and click the verification icon. You'll get a complete breakdown of how the outcome was generated, ensuring complete transparency and fair play.</p>
+                </div>
             </article>
 
-            <article class="content-block">
-                <h2 class="content-block__title">Demo Mode for Practice</h2>
-                <p class="content-block__text">New to Dude Spin? No problem. Our demo mode lets you experience the full gameplay without risking real money. Test different strategies, explore the difficulty levels, and get comfortable with the mechanics—all risk-free.</p>
-                <p class="content-block__text">When your demo credits run out, simply reload and continue practicing. Once you're ready, switch to real money mode and start your adventure with confidence.</p>
+            <article class="content-block content-block--bg-3">
+                <div class="content-block__overlay"></div>
+                <div class="content-block__inner">
+                    <h2 class="content-block__title">Demo Mode for Practice</h2>
+                    <p class="content-block__text">New to Dude Spin? No problem. Our demo mode lets you experience the full gameplay without risking real money. Test different strategies, explore the difficulty levels, and get comfortable with the mechanics—all risk-free.</p>
+                    <p class="content-block__text">When your demo credits run out, simply reload and continue practicing. Once you're ready, switch to real money mode and start your adventure with confidence.</p>
+                </div>
             </article>
 
-            <article class="content-block">
-                <h2 class="content-block__title">Responsible Gaming</h2>
-                <p class="content-block__text">We're committed to providing a safe and responsible gaming environment. Set your limits, take breaks, and always play within your means. Gaming should be fun and entertaining, never a source of financial stress.</p>
-                <p class="content-block__text">If you feel that your gaming habits are becoming problematic, please seek help from responsible gambling organizations. We provide tools and resources to help you maintain control over your gaming activity.</p>
+            <article class="content-block content-block--bg-4">
+                <div class="content-block__overlay"></div>
+                <div class="content-block__inner">
+                    <h2 class="content-block__title">Responsible Gaming</h2>
+                    <p class="content-block__text">We're committed to providing a safe and responsible gaming environment. Set your limits, take breaks, and always play within your means. Gaming should be fun and entertaining, never a source of financial stress.</p>
+                    <p class="content-block__text">If you feel that your gaming habits are becoming problematic, please seek help from responsible gambling organizations. We provide tools and resources to help you maintain control over your gaming activity.</p>
+                </div>
             </article>
         </div>
     </section>
@@ -477,7 +489,7 @@
                 <h2 class="big-cta__title">Ready to Start Your Adventure?</h2>
                 <p class="big-cta__text">Join thousands of players experiencing the thrill of Dude Spin. Create your account today and claim your welcome bonus!</p>
                 <div class="big-cta__buttons">
-                    <a href="#go" class="btn btn--primary btn--large">Create Account & Play Now</a>
+                    <a href="#" class="btn btn--primary btn--large" id="big-cta-register">Create Account & Play Now</a>
                     <a href="#go" class="btn btn--secondary btn--large">Try Demo First</a>
                 </div>
             </div>
@@ -510,6 +522,78 @@
             </div>
         </div>
     </footer>
+
+    <!-- Registration Modal -->
+    <div class="modal-overlay" id="registration-modal-overlay">
+        <div class="modal" id="registration-modal">
+            <button class="modal__close" id="registration-modal-close" aria-label="Close modal">×</button>
+            <div class="modal__header">
+                <div class="modal__logo">
+                    <img src="assets/images/logo.png" alt="Dude Spin" class="logo-image">
+                </div>
+                <h2 class="modal__title">Registration</h2>
+            </div>
+            <form class="registration-form" id="registration-form">
+                <div class="form-group">
+                    <label class="form-label">Registration Method</label>
+                    <div class="form-tabs">
+                        <button type="button" class="form-tab active" data-tab="email">E-Mail</button>
+                        <button type="button" class="form-tab" data-tab="phone">Phone</button>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="country" class="form-label">Country</label>
+                        <select id="country" class="form-select" required>
+                            <option value="de">Germany</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="us">United States</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="currency" class="form-label">Currency</label>
+                        <select id="currency" class="form-select" required>
+                            <option value="eur">Euro (EUR)</option>
+                            <option value="gbp">British Pound (GBP)</option>
+                            <option value="usd">US Dollar (USD)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="welcome-bonus" class="form-label">Welcome Bonus</label>
+                    <select id="welcome-bonus" class="form-select">
+                        <option value="300">300% up to €2,000 + 150 FS</option>
+                        <option value="200">200% up to €1,000 + 100 FS</option>
+                        <option value="100">100% up to €500 + 50 FS</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">E-Mail</label>
+                    <input type="email" id="email" class="form-input" placeholder="Enter your E-Mail" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="form-input-wrapper">
+                        <input type="password" id="password" class="form-input" placeholder="Enter your Password" required>
+                        <button type="button" class="form-input-toggle" id="password-toggle" aria-label="Toggle password visibility">👁</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-checkbox">
+                        <input type="checkbox" required>
+                        <span>I am over 18 years old and accept the <a href="#" class="form-link">Terms & Conditions</a> and <a href="#" class="form-link">Privacy Policy</a></span>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <p class="form-note">By continuing, you agree to receive updates and news.</p>
+                </div>
+                <button type="submit" class="btn btn--primary btn--large btn--block">REGISTER</button>
+                <div class="form-footer">
+                    <p>Already have an account? <a href="#" class="form-link" id="login-link">Log in</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <!-- Left Sidebar -->
     <div class="sidebar-overlay" id="sidebar-overlay"></div>
