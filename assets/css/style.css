@@ -1927,6 +1927,20 @@ a {
         max-height: 80px;
     }
     
+    .game-card {
+        flex: 0 0 250px;
+        min-width: 250px;
+    }
+    
+    .game-card img {
+        height: 300px;
+    }
+    
+    .game-card__title {
+        font-size: 0.9375rem;
+        padding: var(--spacing-sm);
+    }
+    
     .specs-table {
         min-width: 450px;
         font-size: 0.9375rem;
@@ -2040,6 +2054,20 @@ a {
     
     .advantage-item__text {
         font-size: 0.875rem;
+    }
+    
+    .game-card {
+        flex: 0 0 200px;
+        min-width: 200px;
+    }
+    
+    .game-card img {
+        height: 250px;
+    }
+    
+    .game-card__title {
+        font-size: 0.875rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
     }
     
     .specs-table {
